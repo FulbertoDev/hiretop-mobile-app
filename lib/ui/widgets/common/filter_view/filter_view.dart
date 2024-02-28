@@ -120,7 +120,15 @@ class FilterView extends StackedView<FilterViewModel> {
             baseline_3x.heightBox,
             CustomButton(
               label: "Appliquer",
-              onPressed: () {},
+              onPressed: () {
+                final result = {
+                  'date': viewModel.dateFilter,
+                  'job': viewModel.jobType,
+                  'salary':
+                      RangeValues(viewModel.minSalary, viewModel.maxSalary),
+                };
+                locator<NavigationService>().back(result: result);
+              },
             ),
           ],
         ).px16(),

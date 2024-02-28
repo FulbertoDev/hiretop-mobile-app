@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hiretop_mobile_app/gen/assets.gen.dart';
 import 'package:hiretop_mobile_app/ui/common/app_colors.dart';
 import 'package:hiretop_mobile_app/ui/common/ui_helpers.dart';
 import 'package:hiretop_mobile_app/ui/widgets/common/job_card/job_card.dart';
@@ -42,25 +43,36 @@ class JobsView extends StackedView<JobsViewModel> {
           ),
         ],
       ),
-      body: ListView.separated(
-        itemBuilder: (ctx, index) {
-          var job = viewModel.jobs[index];
-          bool isFav = viewModel.favs.contains(viewModel.jobs[index].id);
-          return JobCard(
-            job: job,
-            isFavorite: isFav,
-            onFav: () {
-              if (!isFav) {
-                viewModel.addToFavorite(job);
-              } else {
-                viewModel.removeFromFavorite(job.id);
-              }
-            },
-          );
-        },
-        separatorBuilder: (ctx, index) => baseline_2x.heightBox,
-        itemCount: viewModel.jobs.length,
-      ),
+      body: viewModel.jobs.isEmpty
+          ? Center(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Assets.svg.emptyIllustration.svg(),
+                  baseline_3x.heightBox,
+                  "Aucune offre.".text.semiBold.size(baseline_3x).make(),
+                ],
+              ),
+            )
+          : ListView.separated(
+              itemBuilder: (ctx, index) {
+                var job = viewModel.jobs[index];
+                bool isFav = viewModel.favs.contains(viewModel.jobs[index].id);
+                return JobCard(
+                  job: job,
+                  isFavorite: isFav,
+                  onFav: () {
+                    if (!isFav) {
+                      viewModel.addToFavorite(job);
+                    } else {
+                      viewModel.removeFromFavorite(job.id);
+                    }
+                  },
+                );
+              },
+              separatorBuilder: (ctx, index) => baseline_2x.heightBox,
+              itemCount: viewModel.jobs.length,
+            ),
     );
   }
 

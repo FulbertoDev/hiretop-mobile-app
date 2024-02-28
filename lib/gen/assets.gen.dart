@@ -37,6 +37,10 @@ class $AssetsSvgGen {
   /// File path: assets/svg/delete-icon.svg
   SvgGenImage get deleteIcon => const SvgGenImage('assets/svg/delete-icon.svg');
 
+  /// File path: assets/svg/empty-illustration.svg
+  SvgGenImage get emptyIllustration =>
+      const SvgGenImage('assets/svg/empty-illustration.svg');
+
   /// File path: assets/svg/eye-icon.svg
   SvgGenImage get eyeIcon => const SvgGenImage('assets/svg/eye-icon.svg');
 
@@ -76,6 +80,7 @@ class $AssetsSvgGen {
         chatIcon,
         connectionIcon,
         deleteIcon,
+        emptyIllustration,
         eyeIcon,
         eyeSlashIcon,
         favIcon,

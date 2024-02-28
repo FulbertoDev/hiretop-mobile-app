@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:stacked_services/stacked_services.dart';
 
+import '../../../app/app.locator.dart';
+import '../../common/app_colors.dart';
 import 'favorites_viewmodel.dart';
 
 class FavoritesView extends StackedView<FavoritesViewModel> {
@@ -13,9 +16,19 @@ class FavoritesView extends StackedView<FavoritesViewModel> {
     Widget? child,
   ) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
-      body: Container(
-        padding: const EdgeInsets.only(left: 25.0, right: 25.0),
+      appBar: AppBar(
+        backgroundColor: scaffoldBackgroundColor,
+        elevation: 0,
+        foregroundColor: primaryColor,
+        leading: IconButton(
+          onPressed: () {
+            locator<NavigationService>().back();
+          },
+          icon: const Icon(
+            Icons.arrow_back_rounded,
+          ),
+        ),
+        title: const Text("Favoris"),
       ),
     );
   }

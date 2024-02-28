@@ -1,78 +1,34 @@
-import 'dart:math';
-
-import 'package:flutter/material.dart';
-
-const double _tinySize = 5.0;
-const double _smallSize = 10.0;
-const double _mediumSize = 25.0;
-const double _largeSize = 50.0;
-const double _massiveSize = 120.0;
-
-const Widget horizontalSpaceTiny = SizedBox(width: _tinySize);
-const Widget horizontalSpaceSmall = SizedBox(width: _smallSize);
-const Widget horizontalSpaceMedium = SizedBox(width: _mediumSize);
-const Widget horizontalSpaceLarge = SizedBox(width: _largeSize);
-
-const Widget verticalSpaceTiny = SizedBox(height: _tinySize);
-const Widget verticalSpaceSmall = SizedBox(height: _smallSize);
-const Widget verticalSpaceMedium = SizedBox(height: _mediumSize);
-const Widget verticalSpaceLarge = SizedBox(height: _largeSize);
-const Widget verticalSpaceMassive = SizedBox(height: _massiveSize);
-
-Widget spacedDivider = const Column(
-  children: <Widget>[
-    verticalSpaceMedium,
-    Divider(color: Colors.blueGrey, height: 5.0),
-    verticalSpaceMedium,
-  ],
-);
-
-Widget verticalSpace(double height) => SizedBox(height: height);
-
-double screenWidth(BuildContext context) => MediaQuery.of(context).size.width;
-double screenHeight(BuildContext context) => MediaQuery.of(context).size.height;
-
-double screenHeightFraction(BuildContext context,
-        {int dividedBy = 1, double offsetBy = 0, double max = 3000}) =>
-    min((screenHeight(context) - offsetBy) / dividedBy, max);
-
-double screenWidthFraction(BuildContext context,
-        {int dividedBy = 1, double offsetBy = 0, double max = 3000}) =>
-    min((screenWidth(context) - offsetBy) / dividedBy, max);
-
-double halfScreenWidth(BuildContext context) =>
-    screenWidthFraction(context, dividedBy: 2);
-
-double thirdScreenWidth(BuildContext context) =>
-    screenWidthFraction(context, dividedBy: 3);
-
-double quarterScreenWidth(BuildContext context) =>
-    screenWidthFraction(context, dividedBy: 4);
-
-double getResponsiveHorizontalSpaceMedium(BuildContext context) =>
-    screenWidthFraction(context, dividedBy: 10);
-double getResponsiveSmallFontSize(BuildContext context) =>
-    getResponsiveFontSize(context, fontSize: 14, max: 15);
-
-double getResponsiveMediumFontSize(BuildContext context) =>
-    getResponsiveFontSize(context, fontSize: 16, max: 17);
-
-double getResponsiveLargeFontSize(BuildContext context) =>
-    getResponsiveFontSize(context, fontSize: 21, max: 31);
-
-double getResponsiveExtraLargeFontSize(BuildContext context) =>
-    getResponsiveFontSize(context, fontSize: 25);
-
-double getResponsiveMassiveFontSize(BuildContext context) =>
-    getResponsiveFontSize(context, fontSize: 30);
-
-double getResponsiveFontSize(BuildContext context,
-    {double? fontSize, double? max}) {
-  max ??= 100;
-
-  var responsiveSize = min(
-      screenWidthFraction(context, dividedBy: 10) * ((fontSize ?? 100) / 100),
-      max);
-
-  return responsiveSize;
-}
+double get defaultButtonRadius => 6.0;
+double get quarterBaseline => 2.0;
+double get semiBaseline => 4.0;
+double get baseline => 8.0;
+double get baseline_5 => 12.0;
+double get baseline_5_5 => 14.0;
+double get baseline_2x => 16.0;
+double get baseline_2x_5 => 18.0;
+double get baseline_3x => 24.0;
+double get baseline_4x => 32.0;
+double get baseline_4x_5 => 36.0;
+double get baseline_5x => 40.0;
+double get baseline_5x_5 => 44.0;
+double get baseline_6x => 48.0;
+double get baseline_6x_5 => 52.0;
+double get baseline_7x => 56.0;
+double get baseline_8x => 64.0;
+double get baseline_8x_5 => 68.0;
+double get baseline_9x => 72.0;
+double get baseline_10x => 80.0;
+double get baseline_11x => 88.0;
+double get baseline_12x => 96.0;
+double get baseline_12x_5 => 100.0;
+double get baseline_13x => 104.0;
+double get baseline_14x => 112.0;
+double get baseline_15x => 120.0;
+double get baseline_16x => 128.0;
+double get baseline_17x => 136.0;
+double get baseline_18x => 144.0;
+double get baseline_18x_5 => 148.0;
+double get baseline_19x => 152.0;
+double get baseline_20x => 160.0;
+double get baseline_21x => 168.0;
+double get baseline_22x => 176.0;

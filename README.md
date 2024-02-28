@@ -12,22 +12,42 @@ A mobile app.
 
 ## Table of Contents
 
-- [About](#about)
-
-- [Installation](#installation)
-
-  - [Prerequisites](#prerequisites)
-
-  - [Clone the Repository](#clone-the-repository)
-
-  - [Configuration](#configuration)
-
-  - [Build and Run](#build-and-run)
+- [HIRETOP MOBILE APP](#hiretop-mobile-app)
+  - [Table of Contents](#table-of-contents)
+  - [About](#about)
+  - [Built-With](#built-with)
+    - [Stacked](#stacked)
+    - [Hive](#hive)
+    - [Dio + Retrofit](#dio--retrofit)
+    - [Velocity\_x](#velocity_x)
+    - [Flutter Gen](#flutter-gen)
+    - [Firebase Firestore](#firebase-firestore)
 
 
 
 ## About
 
-This application was built with Flutter to have a hybrid version (multiplatform).
+This application was built with [Flutter](https://flutter.dev) to have a hybrid version (multiplatform).
 
-## Installation
+## Built-With
+
+### Stacked
+Stacked is a Flutter framework for building production applications. It offers a complete frontend
+architecture for our app, and make the code testable and maintainable.
+
+### Hive
+Hive is used for local storage, for its speed in both reading and writing.
+
+
+### Dio + Retrofit
+Dio is preferred for all it has to offer. It's pretty complete. It handles server requests, interceptors and transformers.
+
+
+### Velocity_x
+An extension library that speeds development.
+
+### Flutter Gen
+This is a library that manages my project's assets, and makes them available in the project as properties of a class. It saves me having to write the full path to an image I want to display, for example.
+
+### Firebase Firestore
+For the chat module, Firebase Firestore is the tool of choice, to facilitate real-time functionnality.
